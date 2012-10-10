@@ -1,0 +1,1 @@
+﻿The Daily course format is based off the Weekly course format. Is shows sections as days rather than weeks. Useful for shorter courses or workshops.
