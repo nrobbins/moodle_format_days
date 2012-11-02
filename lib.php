@@ -73,14 +73,15 @@ function callback_days_get_section_name($course, $section) {
         return get_string('section0name', 'format_days');
     } else {
         $dates = format_days_get_section_dates($section, $course);
-
         // We subtract 24 hours for display purposes.
         $dates->end = ($dates->end - 86400);
-
+        $dayname = getdate($dates->start);
+        $thisdayname = strtolower($dayname['weekday']);
+        $localized_thisdayname = get_string($thisdayname, 'calendar');
         $dateformat = ' '.get_string('strftimedateshort');
-        $weekday = userdate($dates->start, $dateformat);
+        $weekday = $localized_thisdayname. ',<br> ' . userdate($dates->start, $dateformat);
         $endweekday = userdate($dates->end, $dateformat);
-        return $weekday;//.' - '.$endweekday;
+        return $weekday;
     }
 }
 
