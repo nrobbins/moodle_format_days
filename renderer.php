@@ -85,7 +85,7 @@ class format_days_renderer extends format_section_renderer_base {
      * @param array $mods used for print_section()
      * @param array $modnames used for print_section()
      * @param array $modnamesused used for print_section()
-     */
+     * /
     public function print_multiple_section_page($course, $sections, $mods, $modnames, $modnamesused) {
         global $PAGE;
 
@@ -205,5 +205,5 @@ class format_days_renderer extends format_section_renderer_base {
             echo $this->end_section_list();
         }
 
-    }
+    }*/
 }
