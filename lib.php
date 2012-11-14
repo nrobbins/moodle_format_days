@@ -79,7 +79,7 @@ function callback_days_get_section_name($course, $section) {
         $thisdayname = strtolower($dayname['weekday']);
         $localized_thisdayname = get_string($thisdayname, 'calendar');
         $dateformat = ' '.get_string('strftimedateshort');
-        $weekday = $localized_thisdayname. ',<br> ' . userdate($dates->start, $dateformat);
+        $weekday = $localized_thisdayname. ', ' . userdate($dates->start, $dateformat);
         $endweekday = userdate($dates->end, $dateformat);
         return $weekday;
     }
