@@ -74,13 +74,11 @@ function callback_days_get_section_name($course, $section) {
     } else {
         $dates = format_days_get_section_dates($section, $course);
         // We subtract 24 hours for display purposes.
-        $dates->end = ($dates->end - 86400);
-        $dayname = getdate($dates->start);
+        $dayname = getdate($dates->start + 43200);
         $thisdayname = strtolower($dayname['weekday']);
         $localized_thisdayname = get_string($thisdayname, 'calendar');
         $dateformat = ' '.get_string('strftimedateshort');
-        $weekday = $localized_thisdayname. ', ' . userdate($dates->start, $dateformat);
-        $endweekday = userdate($dates->end, $dateformat);
+        $weekday = $localized_thisdayname. ', ' . userdate($dates->start + 43200, $dateformat);
         return $weekday;
     }
 }
